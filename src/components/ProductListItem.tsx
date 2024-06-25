@@ -1,5 +1,5 @@
 import Colors from '../constants/Colors';
-import { StyleSheet, View, Text, Image, Pressable } from 'react-native';
+import { StyleSheet, Text, Image, Pressable } from 'react-native';
 import { Product } from '../types';
 import {Link} from 'expo-router';
 
@@ -8,7 +8,7 @@ type ProductListItem = {
 }
 const ProductListItem = ({product}: ProductListItem) =>{
   return (
-    <Link href = '/product' asChild>
+    <Link href = {`/menu/${product.id}`} asChild>
     <Pressable  style={styles.container}>
     <Image source={{uri: product.image || 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png' }} 
     style={styles.image}
